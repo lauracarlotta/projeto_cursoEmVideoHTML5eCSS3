@@ -1,0 +1,195 @@
+
+
+HTML5
+CSS3
+JS
+
+
+
+
+
+
+
+Para comentários, coloque o texto dentro dos caracteres <!--   -->
+
+<!-- Inicialmente toda página deve ter a estrutura básica que é: -->
+
+
+Legenda:
+Tudo o que estiver em vermelho é elemento, tudo o que estiver em verde é atributo, tudo o que estiver em azul é valor e tudo o que estiver em rosa é formatação.
+
+	<!DOCTYPE html> mostra para o servidor que é uma pág. html
+	<html lang=“pt-br”> para língua em português
+
+		<head>
+			<meta charset=“utf-8”>
+			<title> Nome do site </title>
+		</head>
+
+		<body>
+			Tudo o que conterá na página: links, imagens, tabelas, 					formulários, etc.
+		</body>
+
+	</html>
+
+HEAD
+
+<!-- <HEAD> Fará todas as funções comportamentais do seu site -->
+Usamos marcas ou mais comumente conhecidas como tags!
+Mostrará na aba no navegador o título da página da tag title.
+
+	<meta charset=“utf-8”/> charset – conjunto de caracteres, forma padrão para 	ter acentuação usada na língua portuguesa. (sem essa tag, o documento tentará 	abrir o formato padrão que é o ANSI, padrão norte-americano!) *essa tag não 	fecha ou para os formatos mais modernos (mais para deixar “bonito”), 	usamos a barra ao final da tag.
+	<title> Nome do site </title> ← Aparecerá esse titulo na aba da navegação
+	<style>
+
+
+
+		h1{ o que tiver com a tag <h1>
+		     font-family: Arial;
+		     font-size: 30pt;
+		     color: blue;
+		     text-shadow: 2px 2px 2px red;
+		}
+		p{ o que tiver com a tag <p>
+			background-color:DarkTurquoise;
+			color: #4B0082;
+		}
+		body{ tudo o que tiver dentro do <body>.
+			background-color: rgb(218,165,32);
+		}
+	</style> Estilizará a pagina com edições de cor de fundo, cor de fonte, etc.
+	color –  altera a cor do texto. background-color –  altera a cor de fundo. 	<Para isso, você deve adicionar o nome da cor em inglês, o código RGB* = 	(218,165,32) ou  em números hexadecimais - cores primarias nos 	computadores que são #RRGGBB – Ex: #4B0082>
+
+
+
+BODY
+
+Tudo o que conterá na página: links, imagens, tabelas, formulários, etc.
+	<header id="cabecalho"> cabeçalho.
+	<div id="interface"> div – divisão. Id – identificação. Cria uma divisão 	na página. (a tag </div> será fechada ao fim*)
+	<hgroup> grupo de títulos – tudo o que estiver dentro da tag 	ficará agrupado.
+	<h1>Google Glass</h1>
+	<h2>A revolução do Google está chegando</h2>
+	</hgroup>
+	<p> Parágrafo</p>
+	<hr> Marca c/ uma linha horizontal a pág. de uma ponta a outra </hr>
+	<br> quebra de linha *essa tag não fecha
+	<a href = “http://www.google.com.br”> a – utilização dos hiperlinks. href – 	referencia. Colocará um link na página.</a>
+	<img src="/home/laurinha/aula_html5_css3/udemy/img/armario.jpg" 	width="400px"/> img – imagem. src – arquivo ou origem, onde se encontra 	um arquivo armazenado – endereço. width – largura da imagem. Colocará 	uma imagem na pág.  *essa tag não fecha
+
+
+
+TAMANHO E FORMATAÇÃO DE TEXTO
+
+	<h1> Titulo 1 <h/1> Tamanhos das fontes em negrito
+	<h2> Titulo 2 </h2>
+	<h3> Titulo 3 </h3>
+	<h4> Titulo 4 </h4>
+	<h5> Titulo 5 </h5>
+
+	<b> Texto em negrito </b>
+	<i> Texto em itálico</i>
+	<u> Texto Sublinhado </u>
+	<sub>Texto subscrito</sub>
+	<sup>Texto sobrescrito</sup>
+	<big>Texto com fonte maior do que o padrão</big>
+	<small> Texto com fonte menor do que o padrão</small>
+	<em>Texto em itálico</em>
+	<strong>Texto em negrito</strong>
+
+	<p style ="font-family: 'ubuntu' "> Declarando uma única fonte </p>
+
+
+
+TABELAS
+
+<table> Dará inicio a uma tabela.
+	<tr> Para as linhas </tr>
+	<th> para as colunas em negrito (título) </th>
+	<td> Para as linhas da coluna normais </td>
+
+</table>
+
+	EX:
+
+	<table>
+
+		<tr> </tr>
+		<tr> 		</tr>
+		<tr> 		</tr>
+
+	</table>
+
+
+ESTRUTURAS DE UM WEB SITE
+
+
+
+    • TAGS ESTRUTURAIS
+	<div> Traz divisórias para a página </div>
+	<footer> Rodapé da página </footer>
+
+
+FORMULÁRIOS
+
+Dados enviados para um banco de dados. Ex: →
+	<form action="processa.php" method="post"> form – para formulários.  	Action – pra qual página será enviado as infos (no caso, para a processa.php). 	Method –  (POST = será criptografada e será enviada ocultamente, será 	enviada junto ao cabeçalho da página / GET= info será enviada pela url).
+
+	<label> Text </label> Legenda para um item.
+	<input type="text" name="texto1" placeholder="Eu sou um input do tipo 	texto"> input – para criar controle interativos com usuário num formulário. 	type – que tipo o input receberá. name – que identificação aquele input 	receberá. placeholder – frase que aparecerá dentro da caixa de texto.
+
+<!-- Nem todos os inputs precisam de value, mas todos precisam dos atributos type e name. (tags inputs não são fechadas.) -->
+
+	<br> pula uma linha
+
+	<label>Password</label>
+	<input type="Password" name="senha" placeholder="Digite uma senha">
+
+O tipo password troca os caracteres que você está digitando por círculos ou asteriscos para que, se houver alguém do seu lado, o danadinho que fique bisbilhotando a senha cadastrada.
+
+	<!-- placeholder = O texto aparece dentro da caixa →
+
+	<br>
+
+	<label>Oculto</label>
+	<input type="hidden" name="informacao_oculta" value="mensagem oculta">
+	O atributo hidden é um atributo booleano que indica se um elemento é 	ou 	não relevante. Por exemplo, ele pode ser usado para esconder elementos de 	página que não podem ser usados até que o processo de login seja completo.
+
+	<!-- O input acima não aparecerá -->
+
+	<br>
+
+	<label>Select</label> Controle que apresenta um menu de opções.
+	<select name="selecao">
+		<option value="1">Opção 1</option>
+		<option value="2">Opção 2</option>
+		<option value="3">Opção 3</option>
+	</select>
+
+	<br>
+
+	<label>Radio</label> Um botão de escolha.
+	<input type="Radio" name="radio1" value="1">Valor 1
+	<input type="Radio" name="radio1" value="2">Valor 2
+
+	<br>
+
+	<label>Checkbox</label> Caixa de marcação.
+	<input type="Checkbox" name="ck1" value="1" checked>Valor 1
+	<input type="Checkbox" name="ck1" value="2">Valor 2
+	<input type="Checkbox" name="ck1" value="3">Valor 3
+
+ O atributo "checked" serve para forçar o usuário a marcar aquele box, pois quando o formulário for aberto pela primeira vez, este já aparecerá marcado.
+
+	<br>
+	<input type="submit" name="submit" value="Enviar">
+
+<!-- O "submit" para o atributo type, tem como função enviar o formulário para a página declarada acima (que é a processa.php logo quando declaramos a tag <form>) -->
+
+</form> fecha a tag.
+
+
+=> No HTML5, a importância da semântica é muito grande, então existem várias tags específicas!
+=> O que vem depois da # é um id
+=> Imagens com nomes específicos ajudam na localização
+=> Ir por item da lista

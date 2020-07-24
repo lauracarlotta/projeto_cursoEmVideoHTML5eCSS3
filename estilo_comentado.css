@@ -1,0 +1,279 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap'); /* Vide o comentário na em header#cabecalho h2 */
+@font-face { /* Vide o comentário na em header#cabecalho h1 */
+    font-family: FonteLogo;
+    src: url("projeto-glass-html5/_fonts/bubblegum-sans-regular.otf");
+}
+
+body{ /* tudo o que estiver na tag <body> */
+    font-family: Arial, sans-serif;
+    background-color: #dddddd; /* cor de fundo */
+    color:rgba(0,0,0,1); /* cor da fonte */
+}
+
+div#interface {
+    width: 1200px; /* Guanabara deixou em 900px */
+    background-color: #ffffff;
+    margin: -20px auto 0 auto; /* ORDEM DA MARGEM: cima, direita, baixo, esquerda (top, right, bottom, left) **** Caso você queira deixar a página centralizada, use para margens direita e esquerda o valor AUTO. auto é de automático e receberá a config do comput. */ /* MARGIN: fora do conteiner; PADDING: dentro do conteiner */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px; /* Se todos os valores forem iguais, não é necessário que se coloque todos os valores. Basta informar uma única vez. */
+}
+
+p{ /* tudo o que estiver na tag <p> */
+    text-align: justify; /* o testo ficará justificado, se adaptará a página */
+    text-indent: 50px; /* dará um parágrafo de 50 px na tela */
+}
+
+a{
+    color: #606060;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header#cabecalho img#icone{
+    position: absolute;
+    left: 1115px; /* Guanabara deixou em 780px */
+    top: 70px; /* Guanabara deixou em 70px */
+}
+
+header#cabecalho {
+    border-bottom: 1px #606060 solid; /* largura da borda em px, cor da borda, Formato da borda: solid (sólido), dashed (trasejado), dotted (pontilhado), double (se você quiser ais ênfase) inset (), outset () */
+    height: 150px;
+    background: url("projeto-glass-html5/_imagens/glass-logo-peq.jpg") no-repeat 0 85px; /* Parâmetro url com o endereço da imagem, mas como a imagem está fora do arquivo em que eu estou mexendo (que é a pasta _css), eu preciso voltar uma pasta (projeto-glass-html5) e assim acessar a parta imagens (por isso a url está com os dois pontos -..- antes de /_imagens mostrando que uma pasta anterior foi acessada!) **** parâetro no-repeat é para não repetir a imagem, já que a esma é pequena **** deslocamento lateral ***** deslocamento vertical */
+}
+
+header#cabecalho h1 {
+    font-family: FonteLogo, sans-serif; /* Com uma fonte sem serifa *** A "FonteLogo" foi adicionada com um @ localizado logo no início do código, abaixo de charset. E a fonte estava localizada numa pasta com fontes baixado em zip para a construção desse projeto **** Inclusive, o Guanabara indicou o site do google (https://fonts.google.com/) para download de fontes. */
+    font-size: 30pt; /* Tamanho da fonte **** pt - pontos */
+    color: #606060;
+    text-shadow: 1px 1px 3px rgba(0,0,0,.6); /* Guanabara também deixou o deslocamento com 1px e canal alfa em .4 */
+    padding: 0;
+    margin-bottom: 0; /* Para trabalhar somente com a margem debaixo */
+}
+
+header#cabecalho h2{
+    font-family: 'Abel', sans-serif;/* Já pra essa fonte utilizamos o google para importar a fonte e adicioná-la aqui: => Logo abaixo do @ do charset, no início da página, colocamos o seguinte link @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap') (que foi copiado do google. Ele mesmo gera essa linha de código pra você add no seu código) + como você deve colocar no código (como está nessa linha: font-family: 'Abel', sans-serif;)  **** font-family: Arial, sans-serif; <- Foi removido para exemplificar como add uma fonte do google */
+    color: #888888;
+    font-size: 15pt;
+    padding: 0;
+    margin-top: 1px; /* Guanabara deixo com 0px */ /* Para trabalhar somente com a margem de cima */
+}
+
+/* Formatação de imagem com legenda */
+
+/* <figure class="foto-legenda"> Sempre que o parâmetro class for usado em html, para css será usado tag.clsse (como mostra abaixo) figure.foto-legenda {}
+        <img src="_imagens/glass-quadro-homem-mulher.jpg"/>
+        <figcaption>
+            <h4>Google glass</h4>
+            <p>Uma nova maneira de ver o mundo!</p>
+        </figcaption>
+    </figure> */
+
+figure.foto-legenda{ /* tudo o que estiver na tag <figure class="foto-legenda"> PAI */
+    position: relative; /* sem essa tag, a legenda sob para o topo da página, então assim ela ficará dentro da borda */
+    border: 8px solid white; /* borda da imagem - parâmetros de deslocamento horizontal, deslocamento vertical, espalhamento, cor da sombra */
+    box-shadow: 1px 1px 4px black; /* sombra da imagem */
+}
+
+figure.foto-legenda img { /* toda a imagem que estiver na tag <figure class="foto-legenda"> */
+    width: 100%; /* estando em 100%, a imagem se adequará a borda tanto em largura (width) como altura (height) */
+    height: 100%;
+}
+
+figure.foto-legenda figcaption { /* toda a leganda que estiver na tag <figure class="foto-legenda"> FILHO (figcaption é filho de figure que é pai, está dentro dê) */
+    opacity: 0; /* deixará aqui a legenda sem aparecer pois opacity está em 0, mas em conjunto com figure.foto-legenda:hover figcaption, assim que o usuário passar o mouse por cima, como a opacidade está em 1, ele conseguirá ver o que está escrito. */ /* Modificando opacidade com CSS utilizando o parâmetro OPACITY.*/
+    position: absolute; /* Terá uma posição absoluta dentro do seu contaner, e no caso é a borda branca  ****  Utilizando o POSITION em CSS – Diferença entre RELATIVE e ABSOLUTE Existem dois tipos de posicionamento para CSS: com o POSITION RELATIVE, ele terá a localização feita em relação à sua posição atual. Para POSITION ABSOLUTE, ele terá a localização feita em relação a todo o conteúdo  */
+    top: 0px; /* Posição de objetos em CSS Utilizando os parâmetros TOP (topo) e LEFT (esquerda) */
+    background-color: rgba(0,0,0,.4); /* cor de fundo da legenda */
+    color: white; /* cor da fonte da legenda */
+    width: 100%; /* para se adaptar 100% dentro da imagem tanto em largura (width) como altura (height) */
+    height: 100%;
+    padding: 10px; /* para usar a caixa toda, mas no caso, ultrapassou a borda, por isso foi acrescentado o box-sizing com o valor border-box, isso vai criar um box dentro da borda */
+    box-sizing: border-box;
+    transition: opacity 1s; /* a transição da legenda que estava oculta para visível será de 1s em tempo */
+}
+figure.foto-legenda:hover figcaption { /* hover vai disparar uma formatação especifica quando vocẽ passar o mouse por cima do objeto, que no caso é a imagem */
+    opacity: 1;
+}
+
+
+/* Referenciando CLASS e ID A diferença entre CLASS e ID dentro das CSS é na referência. Para usar o CLASS, utilizamos o caractere de ponto (.) e para o ID, utilizaremos a cerquilha (#) */
+
+/* PARA CORES:
+
+Você deverá adicionar o nome da cor em inglês, o código RGB* = ex (218,165,32) ou em números hexadecimais - cores primarias nos computadores que são #RRGGBB (RGB = Red, Green, Blue) – Ex: #4B0082. Temos também o RGBA, 	que seria o RGB + o canal alfa (onde eu coloco o nível de transparência da fonte)= #0,0,0,0. O nível de transparência vai de 0 a 1, onde 0 é totalmente 	transparente e 1 é a exatamente a cor, sem transparência nenhuma.
+
+Então temos:
+→ red = genérica, engessada;
+→ Hexadecimal = #000000 – antiga, mais ainda usada;
+→ RGB = (218,165,032); sempre tem 3 números para cada letra.
+→ RGBA =  (0,0,0,0) com seu canal alfa;
+
+Temos também:
+	A representação em matiz, saturação e luminosidade: <hsl> (hue saturation lightness) e o <hsla>← este contendo também o seu canal alfa. Lembrando que o alfa varia entre 0 e 1 como no RGBA.
+	→ h – hue = matiz;
+	→ s – saturation = saturação;
+	→ b – brightness = brilho, luminosidade. (L)
+	(s e b, são em porcentagem, - Photshop foi usado como parâmetro. Por isso esta em “HSB”, mas a tag é <hsl>)
+
+	<background-image: url("_imagens/fundo.jpg")> background-image – irá inserir uma imagem no fundo a partir de um endereço “url” do arquivo onde o 	mesmo está armazenado. *Lembrando que o ideal, no momento da criação é arquivas todas as pastas no mesmo projeto, para que a IDE te ajude e faça o 	trabalho dela. */
+
+/* Formatação do Menu */
+
+nav#menu { /* Para que o menu flutue é preciso coloca-lo em bloco */
+    display: block;
+}
+nav#menu ul { /*tag + # (id - hashtag ou serquilha) */
+    list-style: none; /* para retirar as demarcações */
+    text-transform: uppercase; /* Deixa todas as letras maiúsculas no menu */
+    position: absolute; /*como queremos que só a lista flutue na tela, passando por cima dos outros elementos da página, colocamos ela como posição absoluta e assim o deslocamos alterando os valores de top e left (lembrando que o valor 0 para as margens da página não são o que ficam coladas nas bordas, por isso o valor de -20px para top) **** O POSITION do CSS3, vai configurar qual será a base de movimentação em relação ao seu objeto container. */
+    top: -20px;
+    left: 635px;
+}
+
+nav#menu li{ /* para tudo o que estiver na tag <li> */
+    display: inline-block; /* para deixar os itens da lista um do lado do outro (todos numa mesma linha) */
+    background-color: #dddddd;
+    padding: 10px; /* Para criar um espaço entre o texto e o background color, para não ficar colocado um no outro */
+    margin: 2px; /* Diferente do padding (que controla o espaço dentro do background color), o margin controla o espaço fora dele. */
+    transition: background-color 1s; /* Caso o parâmetro não funcione no browser que você usa, utilize o site prefixr.com para copiar o código válido para todos os navegadores */
+}
+
+nav#menu li:hover { /* para tudo o que estiver na tag <li> e fara as transições quando o ouse passar por cima */
+    background-color: #606060;
+}
+
+nav#menu h1{ /* para tudo o que estiver na tag <h1> */
+    display: none; /*Isso fará com que a tag H1 desapareça da página visualmente, porém sedo de suma importancia que ficque na paǵina */
+}
+
+nav#menu a{ /* para tudo o que estiver na tag <a> */
+    color: #000000; /* para deixar o texto na cor preta */
+    text-decoration: none; /* para "tirar" o hiperlink, o soblinhado do texto */
+}
+
+nav#menu a:hover { /* para tudo o que estiver na tag <li> hover = que fará as transições quando o mouse passar por cima */
+    color: #ffffff; /* quando passar o mouse por cima a cor da letra irá mudar pra branco */
+    text-decoration: none; /* text-decoration: underline; e sublinhará o texto, mas eu tirei porque eu não gostei */
+}
+
+/* Formatação da section, aside e footer */
+
+section#corpo { /* Lado esquerdo */
+    display: block; /* Para ficar em bloco */
+    width: 687px; /* Guanabara deixou em 500px */
+    float: left; /* Para que meu bloco flutue, mas para fazê-lo flutuar é preciso que o display deles estejam em blocos (blocks) */
+    border-right: 1px solid #606060;
+    padding-right: 15px; /* Guanabara deixou em 15px */
+}
+
+article#noticia-principal h2{ /* Article - artigo. Caso a sua página tenha vários artigos, você pode separar a sua section em várias articles */
+    font-size: 13pt;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0 5px 10px;
+    margin: 10px 0 10px 0;
+}
+header#cabeçalho-artigo h1{
+    font-family: FonteLogo, sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+header#cabeçalho-artigo h2{
+    font-size: 13pt;
+    color: #cecece;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+header#cabeçalho-artigo h3{
+    font-size: 12pt;
+    color: #606060;
+}
+h3.direita{
+    text-align: right;
+}
+
+table#tabelaspec{
+    border: 1px solid #606060;
+    border-spacing: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Tabelas */
+/* Neste caso o span veio a acalhar  muito pois a config de mar/2013 eram diferentes de caption, então deu liberdade para modificar o que era necessário */
+/* Table rows = linhas <tr> / table data = <td> dentro da tr / table cols = colunas */
+/* Rowspan - expansão em linha / colspan = expansão de coluna *** Funciona só pra tag <td> *** Funciona só pra tag <td>  *** Como a função "mesclar célula do excel" */
+
+table#tabelaspec td{
+    border: 1px solid #606060;
+    padding: 10px;
+    text-align: center; /* Centralização do texto */
+    vertical-align: middle; /* Alinhamento vertical : middle - no meio */
+}
+
+table#tabelaspec td.ce{ /* Para poder mexer nas colunas tranquilamente eu criei classes: ce para classe esquerda (coluna da esquerda) e cd para classe da direita (coluna da direita) */
+    color: #ffffff;
+    background-color: #606060;
+    text-align: right; /* Guanabara não colocou na aula mas eu achei que pra ficar mais parecido com o que ele tinha deixado como referencia, eu acrescentei */
+    vertical-align: top;
+    font-weight: bold;
+}
+
+table#tabelaspec td.cd{
+    background-color: #cecece;
+    text-align: left; /* Guanabara não colocou na aula mas eu achei que pra ficar mais parecido com o que ele tinha deixado como referencia, eu acrescentei */
+}
+
+table#tabelaspec caption{
+    color: #888888;
+    font-size: 13pt; /* Guanabara deixou de 13pt */
+    font-weight: bolder;
+}
+
+table#tabelaspec span{
+    display: block;
+    float: right;
+    color: #606060; /* Guanabara deixou #000000 */
+    font-size: 8pt;
+    margin-top: 10px;
+}
+
+aside#lateral { /* Lado direito */
+    display: block;
+    width: 465px; /* Guanabara deixou em 350px */
+    float: right;
+    background-color: #dddddd;
+    padding: 8px; /* Guanabara colocou de 10px; */
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+    margin-top: 10px;
+    margin-left: 8px; /* Margin-left não tinha mas eu decide por conforme as formatações que eu coloquei na minha página */
+}
+
+aside#lateral h1{
+    font-family: FonteLogo, sans-serif;
+    font-size: 20pt;
+    color: #606060;
+}
+
+aside#lateral h2 {
+    background-color: #606060;
+    font-size: 13pt;
+    color: #ffffff;
+    padding: 5px;
+}
+
+footer#rodape { /* Final, rodapé da página */
+    clear: both; /* Limpe ambos = Limpe a configuração dos dois lados (section e aside) */
+    border-top: 1px solid #606060;
+}
+
+footer#rodape p {
+    text-align: center;
+}

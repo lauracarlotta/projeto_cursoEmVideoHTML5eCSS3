@@ -1,0 +1,113 @@
+<!DOCTYPE html> <!-- Informa ao meu navegador que que é um arquivo html-->
+<html lang="pt-br"> <!--atributo lang (linguagem) informará que a página será em português-->
+
+<head> <!-- <HEAD> Fará todas as funções comportamentais do seu site -->
+    <meta charset="utf-8"/> <!-- charset – conjunto de caracteres, forma padrão para 	ter acentuação usada na língua portuguesa. (sem essa tag, o documento tentará 	abrir o formato padrão que é o ANSI, padrão norte-americano!) *essa tag não 	fecha ou para os formatos mais modernos (mais para deixar “bonito”), 	usamos a barra ao final da tag. -->
+    <title> Tudo Sobre o Google Glass </title> <!--Aparecerá esse titulo na aba da navegação-->
+    <link rel="stylesheet" href="estilo_comentado.css"/> <!-- type="text/css" não é mais necessário ter na tag então para que esta fique menor, o parâmetro type foi retirado! / **** / stylesheet=Folha de estilo. href=Hypertext Reference, referência de hipertexto--> <!--substituimo a tag <style> </style>, que serve para formatação em css interna, para a que está nessa linha de código-->
+</head>
+<script language="JavaScript" src="projeto-glass-html5/_javascript/funcoes.js"></script> <!-- Damos os parâmetros a cada item da lista, pois é o que queremos: que a cada vez que passemos o mouse sobre no menu, ele ude a imagem. -->
+<body> <!-- Tudo o que conterá na página: links, imagens, tabelas, formulários, etc.-->
+
+<div id="interface"> <!-- div – divisão. Id – identificação. Cria uma divisão 	na 	página. (a tag </div> será fechada ao fim*) -->
+    <header id="cabecalho"> <!-- header – cabeçalho.  Id – identificação. -->
+        <hgroup> <!-- grupo de títulos – tudo o que estiver dentro da tag 	ficará 	agrupado. -->
+            <h1>Google Glass</h1> <!-- Hierarquia de títulos -->
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+
+        <img id="icone" src="projeto-glass-html5/_imagens/glass-oculos-preto-peq.png"/> <!-- img – imagem. src – arquivo ou origem, onde se encontra 	um arquivo armazenado – endereço. -->
+
+        <nav id="menu"> <!-- navegação, será um menu de navegação-->
+            <!-- ol - (ordered lists) listas ordenadas / ul - (unordered lists) listas não ordenadas / dentro delas terermos li - (list items) itens de listas -->
+
+            <h1>Menu Principal</h1>
+            <!-- <ol type="1"> Tipo de listas ordenadas: type"1" - numerará a lista e forma crescente. Ex: 1. Home e assim sucessivamente (sendo está a forma padrão) / type"a" ou "A" - criará uma lista crescente em ordem alfabetica sendo representada em a minúsculo como A maiúsculo. Ex: a. Home ou A. Home / type"i" = a ordem ficará em números romanos minúsculos ou maiúsculos. Ex: i. Home ou I. Home / *** Caso você queira que a lista comece a partir da letra "c" (Ex.) é necessário acrecestencar o atributo start, ou seja, o código ficara assim: <ol type="a" start="3">, isso porque o atributo start só aceita caracteres numéricos, logo se você quer que comece pela letra "c", c é a 3ª letra do alfabeto, por isso o número "3". -->
+
+            <ul type="circle"> <!-- Para a lista não ordenada ou com demarcadores (listas com demarcadores), o padrão serão pontos (ou bolinhas) / <ul type "square = a lista ficará marcada com quadrados / type circle" = ficará marcada com circulos com a borda preta e brancos por dentro / type "disc" = onde ficará marcado com circulos pretos (sendo este o tipo padrão) -->
+                <li onmouseover="mudaFoto('projeto-glass-html5/_imagens/home.png')" onmouseout="mudaFoto('projeto-glass-html5/_imagens/glass-oculos-preto-peq.png')"><a href="index_comentado.html">Home</a></li> <!-- Adicionamos o <script> entre o <head> e o <body> e em cada ite da lista, informamos as modificações (de fotos) para cada item do menu. -->
+                <li onmouseover="mudaFoto('projeto-glass-html5/_imagens/especificacoes.png')" onmouseout="mudaFoto('projeto-glass-html5/_imagens/glass-oculos-preto-peq.png')"><a href="index_comentado.html"><a href="projeto-glass-html5/specs_comentado.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('projeto-glass-html5/_imagens/fotos.png')" onmouseout="mudaFoto('projeto-glass-html5/_imagens/glass-oculos-preto-peq.png')"><a href="index_comentado.html"><a href="projeto-glass-html5/fotos_comentado.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('projeto-glass-html5/_imagens/multimidia.png')" onmouseout="mudaFoto('projeto-glass-html5/_imagens/glass-oculos-preto-peq.png')"><a href="index_comentado.html"><a href="projeto-glass-html5/multimidia_comentado.html">Multimídia</a></li>
+                <li onmouseover="mudaFoto('projeto-glass-html5/_imagens/contato.png')" onmouseout="mudaFoto('projeto-glass-html5/_imagens/glass-oculos-preto-peq.png')"><a href="index_comentado.html"><a href="projeto-glass-html5/fale-conosco_comentado.html">Fale conosco</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+<section id="corpo"> <!-- Isso criará uma sessão na esquerda --> <!-- Article - artigo. Caso a sua página tenha vários artigos, você pode separar a sua section em várias articles -->
+    <article id="noticia-principal">
+    <header id="cabeçalho-artigo"> <!-- Eu posso criar quantos headers eu quiser. Veja: nós temos o header principal que está dentro de uma div e temos um segundo header que pertence ao article e que está dentro de uma section. -->
+    <hgroup>
+        <h3>Tecnologia > Inovações</h3>
+        <h1>Saiba tudo sobre o Google Glass</h1>
+        <h2>por Gustavo Guanabara</h2>
+        <h3 class="direita">Atualizado em 23/Abril/2013</h3>
+    </hgroup>
+    </header>
+
+    <h2>O que é</h2>
+    <p>O <span style="font-weight: bold;">Google Glass</span> é um acessório em forma de óculos que possibilita a interação dos usuários com diversos conteúdos em realidade aumentada. Também chamado de <a href="https://www.google.com/glass/start/" target="_blank" style="color: #000000">Project Glass</a>, o eletrônico é capaz de tirar fotos a partir de comandos de voz, enviar mensagens instantâneas e realizar vídeo&shy;con&shy;ferên&shy;cias. Seu lançamento está previsto para 2014, e seu preço deve ser de US$ 1,5 mil. Atualmente o <em>Google Glass</em> encontra-se em fase de testes e já possui um vídeo totalmente gravado com o dispositivo. Além disso, a companhia de buscas registrou novas patentes anti-&shy;furto e de desbloqueio de tela para o acessório.</p> <!-- Juntamente com o href na tag <a>, adicionamos o parâmetro target (que significa "alvo") com o valor _blank para que ao invés de a minha página ser substituída, o link seja aberto em outra página, ou seja, numa página em branco! / o _self serve para explicitar que o link substituirá a página referencia, mas isso já é o padrão-->  <!-- <span style="font-weight: bold;"> para deixar em negrito (não se usa mais a tag <u> como também não se usa mais a tag <i> para itálico, porém os navegadores ainda leem essas tags) ****  <em> tag atual para deixar o texto em itálico. **** <wbr/> Word Breaker – quebra de palavra, porém, assim não será acrescentado o hífen que usamos no português. Para isso sera usado o &shy; – Soft Hyphen. Burro. (o wbr é comumente usado em urls muito grandes e assim, ele é inserido depois de cada ponto.) Ou seja, quando a página se adapta a tela, as vezes é necessário quebrar uma palavra grande e assim que fazemos isso: Em url com <wbr/> e quando necessitamos da hifenização - 	&shy; -->
+
+    <figure class="foto-legenda"> <!-- figure – Para delimitar imagens que fazem partes de conteúdos e dar significado semântico pra elas. Class – classe da imagem (tipo uma 2ª referencia.) -->
+        <img src="projeto-glass-html5/_imagens/glass-quadro-homem-mulher.jpg"/>
+        <figcaption> <!-- figcaption – para legendas das imagens, dentro dessa tag poderá ter os ais diversos tipos de formatação. -->
+            <h4>Google glass</h4>
+            <p>Uma nova maneira de ver o mundo!</p>
+        </figcaption>
+    </figure>
+
+    <h2>Data de lançamento</h2>
+    <p>Não há uma data específica e oficial para o dispositivo ser lançado, ainda. Pode ser que ele esteja disponível em demonstrações a partir de 2013, mas seu lançamento para as lojas fica para, pelo menos, 2014.</p>
+
+    <h2>Especificações Técnicas</h2>
+
+        <table id="tabelaspec"> <!-- Tabelas -->
+
+            <caption> Tabela Técnica do Google Glass <span>Mar/2013</span></caption> <!-- Neste caso o span veio a acalhar  muito pois a config de mar/2013 eram diferentes de caption, então deu liberdade para modificar o que era necessário -->
+            <!-- Table rows = linhas <tr> / table data = <td> dentro da tr / table cols = colunas -->
+            <tr><td class="ce">Tela</td><td class="cd">Resolução equivalente a tela de 25"</td></tr>
+            <tr><td rowspan="2" class="ce">Camera</td><td class="cd">5MP para fotos</td></tr>
+            <tr><td class="cd">720p para vídeos</td></tr> <!-- Rowspan - expansão em linha / colspan = expansão de coluna *** Funciona só pra tag <td>  *** Como a função "mesclar célula do excel" -->
+            <tr><td rowspan="2" class="ce">Conectividade</td><td class="cd">Wi-Fi</td></tr>
+            <tr><td class="cd">Bluetooth</td></tr>
+            <tr><td class="ce">Memória Interna</td><td class="cd">12GB</td></tr>
+
+        </table>
+
+    <h2>Como funciona</h2>
+    <p>De acordo com fontes próximas do Google, os óculos vão contar com uma pequena tela de LCD ou AMOLED na parte superior e em frente aos olhos do usuário. Com o uso de uma câmera e GPS, você pode se situar, assim como selecionar opções com o movimento da cabeça</p>
+
+    <h2>O que você pode fazer com o Google Glasses</h2>
+    <p>O vídeo de divulgação do Google mostra que você pode se transformar em uma espécie de “super&shy;humano”, já que o aparelho pode indicar a quantos metros você está de seu destino, se o metrô está aberto ou fechado, mostrar o clima, agenda e até mesmo permitir que você marque encontros apenas com comandos de voz.</p>
+
+    [AQUI ENTRA UM VÍDEO]
+
+    </article>
+</section>
+
+<aside id="lateral"> <!-- Isso criará uma sessão na direita -->
+
+    <h1>Outras Notícias</h1>
+    <h2>Vídeo mais recente</h2>
+
+    [AQUI ENTRA UM VÍDEO]
+
+    <h2>Novidades no Glass</h2>
+    <p>O Google enfim revelou as especificações completas do Google Glass, e com ele uma surpresa ainda inédita no mercado: a gigante das buscas usará um sistema de áudio baseado na transdução por condução. Através das hastes dos óculos, o som será transmitido para o ouvido do usuário por meio de microvibrações em determinados ossos de sua cabeça, sem usar nenhum tipo de alto-falante.</p> <br/>
+
+    <p>Além da surpresa do áudio, a tela montada a frente do olho do usuário também chamou atenção. Serão 640 x 360 pixels de resolução que, em proporção, equivaleria a um monitor de 25 polegadas de alta definição colocado a 2,5 metros de distância do espectador.</p>
+
+</aside>
+
+<footer id="rodape"> <!-- Isso criará o final da página, no rodapé -->
+    <p>Copyright &copy; 2013 - by Gustavo Guanabara <br/> <!-- O simbolo do copyright está explicado num arquivo separado com com outras explicações, como exemplo, como fazer para exibir uma linha de código numa página e outros símbolos uteis -->
+        <a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | <a href="http://twitter.com/cursosemvideo" target="_blank">Twitter</a>
+    </p>
+</footer>
+
+</div>
+
+</body>
+
+</html>

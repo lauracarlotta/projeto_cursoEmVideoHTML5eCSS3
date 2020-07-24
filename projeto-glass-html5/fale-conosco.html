@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8"/>
+    <title> Tudo Sobre o Google Glass </title>
+    <link rel="stylesheet" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css"/>
+    <script language="JavaScript" src="_javascript/funcoes.js"></script>
+    <script> /* Será um script local */
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQtde').value); /* Como é inteiro, acrescentamos o parseInt */
+            tot = qtd * 1500; /* Considerando que cada oculos custe 1500 dolares */
+            document.getElementById('cTot').value = tot;
+        }
+    </script>
+</head>
+
+<body>
+
+<div id="interface">
+    <header id="cabecalho">
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/glass-oculos-preto-peq.png"/>
+
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul type="circle">
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html"><a href="specs.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html"><a href="multimidia.html">Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html"><a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <section id="#corpo-full">
+        <article id="noticia-principal">
+            <header id="cabeçalho-artigo">
+                <hgroup>
+                    <h3>Fale Conosco > Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+                </hgroup>
+            </header>
+
+
+            <form method="post" id="fContato" action="mailto:carlotta.custodio@gmail.com" oninput="calc_total();"> <!-- Cria um formulário --> <!-- O método GET envia dados via URL (endereço do site) EX: pesquisa na aba do google => https://www.google.com/search?q=curso+html5&oq=curso+html5 <= O q=curso+html5 como o q= é de query que veio da caixa de texto da pesquisa. É um método mais rápido e menos seguro. Já o método POST envia dados por pacotes. É um método um pouco mais lento, mas possui uma segurança maior. ENTÃO PARA FOMULÁRIOS DE BUSCA = GET. FORMULÁRIOS COM INFOS PESSOAIS = POST. --> <!-- ACTION = seria o "endereço ou local" para onde os dados do seu formulário será enviado. Geralmente é usado o a linguagem PHP para isso --> <!-- oninput quer dizer que quando eu digitar uma coisa eu irei disparar um outro procedimento = Isso será em JS e ficará na nossa head-->
+                <fieldset id="usuario"><legend>Identificação do Usuário</legend> <!-- FIELDSET - Conj. de campos --> <!-- LEGEND - Titula cada conjunto -->
+                    <p><label for="cNome">Nome: </label><input type="text" name="tNome" id="cNome" size="20" maxlength="80" placeholder="Nome Completo"/></p><!-- Se em "type" você colocar qualquer coisa inválida, o navegador entenderá como caixa de texto e se não colocar o type também entenderá como caixa de texto *** qualquer campo de formulário sempre deverá ter um name e um id *** NAME - nome do objeto (tNome - t de texto) *** ID - identificação do objeto (cNome - c de campo **** SEMPRE USE VALORES DIFENTES PRA NAME E ID) **** SIZE - irá mostrar a quantidade de caracteres, mas isso não impedirá de digitar a mais do que o valor imposto **** MAXLENGTH - irá bloquear a quantide de caracteres conforme atribuido no valor do parâmetro (size não bloqueia. maxlength sim!) **** PLACEHOLDER - Dica que damos ao usuário de qual será o conteúdo daquela caixa -->
+                    <p><label for="cSenha">Senha: </label><input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 Dígitos"/></p>
+                    <p><label for="cMail">E-mail: </label><input type="email" name="tMail" id="cMail" size="30" maxlength="40" placeholder="Utilize seu e-mail principal"/></p>
+                    <fieldset id="sexo">
+                        <legend>Sexo:</legend> <!-- o NAME nesse caso precisa ter o mesmo nome, pois faz parte de um mesmo grupo *** e os LABELs são usados para referenciar os nomes aos botões para que você não tenha que selecionar (neste caso) Masculino ou Feminino irando exatamente nas bolinhas do botão rádio (imagina como seria isso num formulário para celular???? )-->
+                        <input type="radio" name="tSexo" id="cMasc" checked /><label for="cMasc"> Masculino </label> <!-- <br/> <- tirei o word Breaker ****  checked deixa uma das opções já marcadas -->
+                        <input type="radio" name="tSexo" id="cFem"/><label for="cFem"> Feminino </label> <!-- Curiosidade sobr o label = Há uma associação semântica com o label, ele não é só bem visto para os botões radio como também para o google. Apps de leitura em tela utilizam muito isso para a acessibilidade para os seus usuários!!! ENTÃO FAÇAM ISSO EM TODOS OS CAMPOS!!!!!!! -->
+                    </fieldset>
+                    <p><label for="cNasc">Data de Nascimento: </label> <input type="date" name="tNasc" id="cNasc"/></p>
+                </fieldset>
+
+                <fieldset id="endereco"><legend>Endereço do Usuário</legend>
+                    <p><label for="cRua">Logradouro: </label><input type="text" name="tRua" id="cRua" size="25" maxlength="90" placeholder="Rua, Avenida, Estrada, Rodovia, ..."/></p>
+                    <p><label for="cNum">Número: <input type="number" name="tNum" id="cNum" min="0" max="99999" maxlength="5" placeholder="Ex. 149"/></label></p>
+                    <p><label for="cComp">Complemento: <input type="text" name="tComp" id="cComp" size="15" maxlength="20" placeholder="Apto 27, 3º andar, ..."></label></p>
+                    <p><label for="cEst">Estado:
+                    <select name="tEst" id="cEst"> <!-- Dentro de uma select podemos colocar várias options -->
+                        <optgroup label="Região Norte"> <!-- irá determinar grupos já organizados para facilitar para o usuŕio -->
+                            <option value="AC">Acre</option> <!-- Podemos acrescentar o valor (value) para que quando o usuário envie o formulário, ao invés de "Acre", envie "AC" que é o valor ao qual atribuimos, assim podemos verificar estátisticas e tirar vários os relatórios e fazer muitas análises diferentes!! -->
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="PA">Pará</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="TO">Tocantins</option>
+                        </optgroup>
+
+                        <optgroup label="Região Nordeste">
+                            <option value="AL">Alagoas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="SE">Sergipe</option>
+                        </optgroup>
+
+                        <optgroup label="Região Centro-Oeste">
+                            <option value="DF">Distrito Federal</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                        </optgroup>
+
+                        <optgroup label="Região Sudeste">
+                            <option value="ES">Espírito Santo</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="SP" selected>São Paulo</option> <!-- Já deixei São Paulo marcado com o selected -->
+                        </optgroup>
+
+                        <optgroup label="Região Sul">
+                            <option value="PR">Paraná</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="SC">Santa Catarina</option>
+                        </optgroup>
+
+                    </select></label></p>
+                    <p><label for="cCid">Cidade: <input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Tangamandápio" list="cidades"/></label></p>
+                    <datalist id="cidades"> <!-- Funcionará como um mecaniscmo de autopreenchimento, lincado ao campo de cidades conforme id do datalist que foi referenciado no input com o list. -->
+                        <option value="São Paulo"></option>
+                        <option value="Campinas"></option>
+                        <option value="Jundiaí"></option>
+                        <option value="Diadema"></option>
+                        <option value="Osasco"></option>
+                        <option value="Santo André"></option>
+                        <option value="São Bernardo do Campo"></option>
+                        <option value="São Caetano"></option>
+                    </datalist>
+                </fieldset>
+
+                <fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+                    <p><label for="cUrg">Grau de Urgência:</label> Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"/>Máx</p> <!-- STEP mostrará o salto de um número para o outro -->
+                    <p><label for="cMsg">Mensagem: </label><textarea  name="tMsg" id="cMsg" cols="45" rows="5" maxlength="2000" placeholder="Deixe aqui a sua mensagem pra gente! Digite até 2000 caracteres."></textarea></p> <!--TEXTAREA - Uma caixa de texto maior que uma caixa de texto comum. Nela será permitido atribuir os valores de cols - colunas e rows - linhas que aparecerão na tela -->
+                </fieldset>
+
+                <fieldset id="pedido"><legend>Quero um Google Glass</legend>
+                    <p><input type="checkbox" name="tPed" id="cPed" checked/><label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                    <p><label for="cCor">Cor: <input type="color" name="tCor" id="cCor" value="#000000"/></label></p> <!-- Neste caso, o value irá já deixar pré marcado a cor atribuida -->
+                    <p><label for="cQtde">Quantidade: <input type="number" name="tQtde" id="cQtde" min="0" max="5" value="0"></label></p>
+                    <p><label for="cTot">Preço Total: $ <input type="text" name="tTot" id="cTot" placeholder="Total a pagar em dólares" readonly/></label></p>
+                </fieldset>
+
+                <!-- <input type="submit" value="Enviar"/> 1ª maneira -->
+                <input type="image" name="tEnviar" id="cEnviar" src="_imagens/botao-enviar.png"/>
+            </form>
+
+<footer id="rodape">
+    <p>Copyright &copy; 2013 - by Gustavo Guanabara <br/>
+        <a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | <a href="http://twitter.com/cursosemvideo" target="_blank">Twitter</a>
+    </p>
+</footer>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* A dica que o Guanabara dá é a seguinte: Usar um arquivo css separado para a página spec (especificações), porque como essa configuração será usada basicamente em em uma página, o arquivo estilo.css ficaria sobrecarregado e para toda página que ele fosse abrir teria que ler o código inteiro, até mesmo o que seria usado uma única vez */
+
+section#conteudo {
+    width: 1000px;
+    margin: auto;
+}
+
+iframe#frame-spec {
+    width: 400px;
+    height: 280px;
+    border: none;
+    overflow: hidden;
+}
+
+iframe#frame-spec::-webkit-scrollbar {
+    display: none;
+}
