@@ -17,3 +17,8 @@ iframe#frame-spec {
 iframe#frame-spec::-webkit-scrollbar {
     display: none;
 }
+
+p.maior {
+    font-size: 13pt;
+    text-align: center;
+}

@@ -24,6 +24,10 @@ p{
     text-indent: 50px;
 }
 
+p.direita {
+    text-align: center;
+}
+
 a{
     color: #606060;
     text-decoration: none;
