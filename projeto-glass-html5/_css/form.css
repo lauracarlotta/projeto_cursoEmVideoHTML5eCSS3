@@ -12,7 +12,7 @@ input, textarea {
     background-color: rgba(255,255,255,.7);
 }
 
-textarea {
+textarea { /* acrescentei */
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -39,7 +39,7 @@ fieldset#sexo {
 }
 
 fieldset#usuario {
-    background: url("../_imagens/icone-contato.png") no-repeat 95% 95%; /* alteramos aqui a largura e altura da localização para que a imagem ao fundo ficasse no canto inferior direito, alem de termos deizado com uma certa transparência */
+    background: url("../_imagens/icone-contato.png") no-repeat 95% 95%;
 }
 
 fieldset#endereco {
@@ -53,6 +53,6 @@ fieldset#mensagem {
 fieldset#pedido {
     background: url("../_imagens/icone-pagamento.png") no-repeat 95% 95%;
 }
-p.direi {
+p.houver {
     margin-left: 25px;
 }

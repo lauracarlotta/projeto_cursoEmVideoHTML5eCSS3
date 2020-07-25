@@ -11,31 +11,14 @@ audio#musica {
     display: block;
     position: relative;
     left: 575px;
-    top: 490px; /* Guanabara deixou 500px */
+    top: 490px;
     width: 300px;
 }
 
 iframe#frame-youtube {
     display: block;
     position: relative;
-    left: 87px; /* Guanabara deixou 90px */
-    top: 30px; /* Guanabara deixou 85px */
+    left: 87px;
+    top: 30px;
     width: 440px;
 }
-/* Juntei tudo o que eu aprendi até agora e optei por não deixar o vídeo no código e sim um link para o youtube, então removi o
- video#filme{
-
- } e usei um iframe como mostra acima. Abaixo, como ficou o código no html.
-
- <iframe width="560" height="315" src="https://www.youtube.com/embed/4EvNxWhskf8?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls="controls" poster="_imagens/video-mini03.jpg" id="frame-youtube" type="video/mp4"></iframe>
-
- Usei do que aprendi com o video e tive que acrescentar no iframe o "controls="controls" poster="_imagens/video-mini03.jpg e type="video/mp4, além de um id para eu conseguir mexer no css"
-
-                <video id="filme" controls="controls" poster="_imagens/video-mini03.jpg">
-                    <source src="_media/getting-started.mp4" type="video/mp4">
-                    Desculpe, mas não foi possível carregar o vídeo.
-                </video>
- */
-
-
-/* Fiz isso porque na página home tem os vídeos hospedados */
